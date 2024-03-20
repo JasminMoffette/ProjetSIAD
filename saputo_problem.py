@@ -1,4 +1,6 @@
 import probleme
 
 class SaputoProbleme(probleme.Probleme):
-    pass
+    
+    def __init__(self):
+        super().__init__()

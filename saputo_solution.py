@@ -2,4 +2,9 @@ import solution
 
 
 class SaputoSolution(solution.Solution):
-    pass
+    
+
+    def __init__(self):
+        super().__init__()
+
+    
