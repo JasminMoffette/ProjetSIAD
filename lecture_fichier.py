@@ -1,0 +1,5 @@
+
+
+class LectureFichier():
+    #TODO
+    pass
