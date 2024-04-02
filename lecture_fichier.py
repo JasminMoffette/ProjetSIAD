@@ -25,7 +25,6 @@ class LectureFichier():
             quantite = df_produits["Quantité"][index]
 
             produit_ajout = produit.Produit(lot, type, ligne, limite, quantite)
-            print(produit_ajout)
             self.produits.append(produit_ajout)
 
     def setOperateurs(self):
