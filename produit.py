@@ -1,14 +1,14 @@
 
 class Produit():
 
-    def __init__(self, lot, type, form, priorite, quantite):
+    def __init__(self, lot, type, ligne, priorite, quantite):
         self.lot = lot
         self.type = type
-        self.form = form
+        self.ligne = ligne
         self.priorite = priorite
         self.quantite = quantite
 
     def __str__(self):
-        return f"{self.lot}, {self.type}, {self.form}g, {self.priorite}, {self.quantite}"
+        return f"{self.lot}, {self.type}, {self.ligne}, {self.priorite}, {self.quantite}"
     
     

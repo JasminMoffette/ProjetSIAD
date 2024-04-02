@@ -20,11 +20,12 @@ class LectureFichier():
         for index in df_produits.index:
             lot = df_produits["# de lot"][index]
             type = df_produits["Type"][index]
-            form = df_produits["Format"][index]
-            priorite = df_produits["Priorité"][index]
+            ligne = df_produits["Ligne"][index]
+            limite = df_produits["Limite de séchage"][index]
             quantite = df_produits["Quantité"][index]
 
-            produit_ajout = produit.Produit(lot, type, form, priorite, quantite)
+            produit_ajout = produit.Produit(lot, type, ligne, limite, quantite)
+            print(produit_ajout)
             self.produits.append(produit_ajout)
 
     def setOperateurs(self):
