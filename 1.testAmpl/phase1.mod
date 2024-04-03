@@ -13,8 +13,6 @@ param employe;
 param operateur;
 param temps_journee;
 
-param nettoyage{i in F, j in F};
-
 var y{l in L} binary;
 var x{f in F, l in L};
 
@@ -29,7 +27,7 @@ subject to c2{f in F, l in L}: x[f,l] <= 1;
 subject to choix_ligne{f in F, l in L : l != lien[f]}: x[f, l] = 0;
 
 #Respecter le temps d'une journée
-subject to c3{f in F}:  sum{l in L} cadence[f] / quantite[f] * x[f,l] <= temps_journee;
+subject to c3{l in L}:  sum{f in F} (1 / cadence[l]) * quantite[f] * x[f,l] <= temps_journee;
 
 #Ouvrir les lignes
 subject to c4{l in L}: sum{f in F} x[f,l] <= 9999* y[l]; 
