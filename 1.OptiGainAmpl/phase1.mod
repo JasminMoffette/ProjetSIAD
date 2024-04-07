@@ -17,7 +17,7 @@ var y{l in L} binary;
 var x{f in F, l in L};
 
 #maximize le gain en $
-maximize objectif: sum{f in F, l in L} x[f,l] * gain[f];
+maximize objectif: sum{f in F, l in L} x[f,l] * gain[f] * quantite[f];
 
 #Permettre des fractions de lot, assure le respect des quantites
 subject to c1{f in F, l in L}: x[f,l] >= 0;

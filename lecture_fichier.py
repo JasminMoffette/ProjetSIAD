@@ -17,6 +17,7 @@ class LectureFichier():
         self.setDictCadence()
         self.setDictEmployes()
         self.setDictOperateurs()
+        self.setJournee()
 
     def __str__(self) -> str:
         return f"{self.produits}, {self.operateurs}, {self.employes}"
