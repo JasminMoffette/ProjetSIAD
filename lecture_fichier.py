@@ -11,6 +11,8 @@ class LectureFichier():
         self.dict_cadence = {}
         self.dict_employes = {}
         self.dict_operateurs = {}
+        self.dict_nettoyage = {("Brie DC", "Brie DC"): 99, ("Brie DC", "Sauvagine"): 20}#TODO
+        
         self.setProduits()
         self.setOperateurs()
         self.setEmployes()
@@ -91,4 +93,4 @@ class LectureFichier():
             self.dict_operateurs[df_operateurs["nom"][index]] = df_operateurs["nombre d'opérateur"][index]
         
 
-fichier = LectureFichier()
+

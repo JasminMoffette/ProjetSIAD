@@ -67,15 +67,3 @@ class SaputoProbleme1(probleme.Probleme):
         
         
 
-
-fichier = lf.LectureFichier()
-problem = SaputoProbleme1(fichier)
-print(problem.liens)
-print(problem.gains)
-print(problem.quantites)
-print(problem.cadences)
-print(problem.employe_ligne)
-print(problem.operateur_ligne)
-print(problem.nb_employes)
-print(problem.nb_operateurs)
-print(problem.journee)

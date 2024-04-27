@@ -21,7 +21,7 @@ class SolveurMoney(solveur.Solveur):
         ampl.setOption("solver", "gurobi")
         ampl.setOption('gurobi_options', 'timelim 600 outlev 0')
         #Lire le fichier .mod
-        ampl.read(os.path.normpath('C:/Users/Darks/Desktop/ProjetSIAD/1.OptiGainAmpl/phase1.mod'))
+        ampl.read(os.path.normpath('C:/Users/Darks/Desktop/SIAD/ProjetSIAD/1.OptiGainAmpl/phase1.mod'))
 
         #Générer les ensembles:
         ampl.set['F'] = list(range(0, len(probleme.fichier.produits)))
@@ -63,15 +63,13 @@ class SolveurMoney(solveur.Solveur):
 
         #Générer la data pour le temps dans une journée:
         ampl.get_parameter("temps_journee").set(probleme.journee)
-        print(probleme.journee)
+        
 
         #Résoudre
         ampl.solve()
 
-        solution_ampl = ampl.getVariable('x').get_values()
-        print(solution_ampl)
-
-fichier = lf.LectureFichier()
-probleme = prob1.SaputoProbleme1(fichier)
-solvage = SolveurMoney()
-solvage.solve(probleme)
+        solution_ampl = ampl.getVariable('x').get_values().to_list()
+        ampl.close()
+        valeurs_utilise = [triplet for triplet in solution_ampl if triplet[2] != 0]
+        valeurs_utilise_arrondies = [(triplet[0], triplet[1], round(triplet[2], 2)) for triplet in valeurs_utilise]
+        return valeurs_utilise_arrondies
