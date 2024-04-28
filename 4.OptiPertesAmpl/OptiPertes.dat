@@ -3,7 +3,7 @@ set F := 0 1 2;
 #défini la Machine : P,M,GF,Multi,C
 set L := 0, 1, 2, 3, 4;
 #Oblige des combinaisons
-param lien:= 0 1 1 1 2 2;
+param lien:= 0 1 1 1 2 1;
 
 #Délai de péremption
 param delai_peremption := 0 0 1 1 2 2;
