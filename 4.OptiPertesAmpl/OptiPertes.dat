@@ -1,0 +1,22 @@
+#défini les lots
+set F := 0 1 2;
+#défini la Machine : P,M,GF,Multi,C
+set L := 0, 1, 2, 3, 4;
+#Oblige des combinaisons
+param lien:= 0 1 1 1 2 2;
+
+#Délai de péremption
+param delai_peremption := 0 0 1 1 2 2;
+#nb de fromages
+param quantite := 0 800 1 500 2 200;
+
+#défini par ligne de production
+param cadence := 0 8 1 12 2 2 3 6 4 5;
+#défini par ligne de production 
+param nb_employe := 0 2 1 3 2 1 3 4 4 2;
+#défini par ligne de production
+param nb_operateur := 0 1 1 1 2 2 3 2 4 1;
+
+param employe := 6;
+param operateur := 4;
+param temps_journee := 100;
