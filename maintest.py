@@ -3,6 +3,8 @@ import solveur_money as sm
 import lecture_fichier as lf
 import saputo_problem2 as sp2
 import solveur_routes as sr
+import saputo_solution as ss
+import traitement as tr
 fichier = lf.LectureFichier()
 problem = sp.SaputoProbleme1(fichier)
 solveur_argent = sm.SolveurMoney()
@@ -35,3 +37,10 @@ print("Test pour solveur route:")
 solveur_route = sr.SolveurRoute()
 solve4= solveur_route.solve(probleme2)
 print(solve4)
+print(solve1)
+
+print("Test de la solution")
+solution = ss.SaputoSolution(solve1, solve4)
+print(solution)
+traitement = tr.Traitement(fichier=fichier, solution=solution)
+print(traitement.affichageSolution())

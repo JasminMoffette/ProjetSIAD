@@ -1,13 +1,10 @@
-import lecture_fichier as lf
-import saputo_problem1 as sp1
-import saputo_problem2 as sp2
+
 import solution
 
 class SaputoSolution(solution.Solution):
     
-    def __init__(self, fichier=lf.LectureFichier, resolu1 = list, resolu2=list):
+    def __init__(self, resolu1, resolu2):
         super().__init__()
-        self.fichier = fichier
         self.resolu1 = resolu1
         self.resolu2 = resolu2
 
