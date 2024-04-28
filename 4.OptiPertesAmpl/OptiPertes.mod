@@ -17,8 +17,10 @@ var y{l in L} binary;
 var x{f in F, l in L};
 var debut_production{F, L} binary;
 
-#maximize le gain en $
-maximize objectif: sum{f in F, l in L} x[f,l]  * quantite[f];
+# Maximiser la quantité produite
+minimize objectif_quantite: sum{f in F} quantite[f]- sum{f in F, l in L}quantite[f]*x[f,l]+
+	sum{f in F, l in L}delai_peremption[f]*x[f,l];
+
 
 #Permettre des fractions de lot, assure le respect des quantites
 subject to c1{f in F, l in L}: x[f,l] >= 0;
@@ -39,14 +41,3 @@ subject to c5: sum{l in L} y[l] * nb_employe[l] <= employe;
 #Respecter les operateurs
 subject to c6: sum{l in L} y[l] * nb_operateur[l] <= operateur;  
 
-# Contrainte pour respecter l'ordre de priorité basé sur le délai avant péremption
-# Contrainte pour respecter l'ordre de priorité basé sur le délai avant péremption
-subject to priorite_delai_péremption {f1 in F, f2 in F: f1 < f2}:
-    forall{l in L}
-        debut_production[f2,l] >= debut_production[f1,l] + x[f1,l];
-#subject to priorite_delai_péremption {f1 in F: f1 > 0}:
-	#forall{l in L}
-    	#x[f1, l] <= x[f1-1, l];
-#subject to priorite_delai_péremption {f in F: f > 0}:
-    #forall{l in L}
-        #x[card(F)+1,l] <= x[card(F),l];
