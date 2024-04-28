@@ -21,7 +21,7 @@ class SolveurMoney(solveur.Solveur):
         ampl.setOption("solver", "gurobi")
         ampl.setOption('gurobi_options', 'timelim 600 outlev 0')
         #Lire le fichier .mod
-        ampl.read(os.path.normpath('C:/Users/Darks/Desktop/SIAD/ProjetSIAD/1.OptiGainAmpl/phase1.mod'))
+        ampl.read(os.path.normpath('C:/Users/Darks/Desktop/ProjetSIAD/1.OptiGainAmpl/phase1.mod'))
 
         #Générer les ensembles:
         ampl.set['F'] = list(range(0, len(probleme.fichier.produits)))
@@ -64,7 +64,7 @@ class SolveurMoney(solveur.Solveur):
         #Générer la data pour le temps dans une journée:
         ampl.get_parameter("temps_journee").set(probleme.journee)
         
-
+  
         #Résoudre
         ampl.solve()
 

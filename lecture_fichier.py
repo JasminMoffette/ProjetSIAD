@@ -11,7 +11,7 @@ class LectureFichier():
         self.dict_cadence = {}
         self.dict_employes = {}
         self.dict_operateurs = {}
-        self.dict_nettoyage = {("Brie DC", "Brie DC"): 99, ("Brie DC", "Sauvagine"): 20}#TODO
+        self.dict_nettoyage = {}
         
         self.setProduits()
         self.setOperateurs()
@@ -20,6 +20,7 @@ class LectureFichier():
         self.setDictEmployes()
         self.setDictOperateurs()
         self.setJournee()
+        self.setDictNettoyage()
 
     def __str__(self) -> str:
         return f"{self.produits}, {self.operateurs}, {self.employes}"
@@ -92,5 +93,13 @@ class LectureFichier():
         for index in df_operateurs.index:
             self.dict_operateurs[df_operateurs["nom"][index]] = df_operateurs["nombre d'opérateur"][index]
         
+    def setDictNettoyage(self):
 
+        df_nettoyage = pd.read_excel('etat.xlsx', sheet_name= "Nettoyage", index_col=0, header=0)
+        for index, row in df_nettoyage.iterrows():
+            for column in df_nettoyage.columns:
+                self.dict_nettoyage[(index, column)] = row[column] 
+        
+
+        
 
