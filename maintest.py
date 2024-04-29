@@ -6,6 +6,7 @@ import solveur_routes as sr
 import saputo_solution as ss
 import solveur_efficacite as se
 import traitement as tr
+import unittest as uni
 fichier = lf.LectureFichier()
 problem = sp.SaputoProbleme1(fichier)
 solveur_argent = sm.SolveurMoney()
@@ -54,3 +55,5 @@ print(solve2)
 probleme22 = sp2.SaputoProblem2(solve2,problem,fichier)
 solve42 = solveur_route.solve(probleme22)
 print(solve42)
+
+

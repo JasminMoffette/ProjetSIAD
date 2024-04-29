@@ -15,7 +15,7 @@ class SaputoProblem2(probleme.Probleme):
         self.journee = probleme.journee
         self.besoins = []  
         self.chemins = [0] * len(self.fichier.dict_cadence) 
-        self.temps_nettoyage = [[0 for x in range(len(list_valide))] for y in range(len(list_valide))]  # formatter depuis le fichier
+        self.temps_nettoyage = [[0 for x in range(len(list_valide))] for y in range(len(list_valide))] 
 
         self.setBesoins()
         self.setChemins()
