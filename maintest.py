@@ -4,6 +4,7 @@ import lecture_fichier as lf
 import saputo_problem2 as sp2
 import solveur_routes as sr
 import saputo_solution as ss
+import solveur_efficacite as se
 import traitement as tr
 fichier = lf.LectureFichier()
 problem = sp.SaputoProbleme1(fichier)
@@ -19,6 +20,7 @@ print(problem.operateur_ligne)
 print(problem.nb_employes)
 print(problem.nb_operateurs)
 print(problem.journee)
+print(problem.poids)
 
 
 print("Tests pour solve en argent:")
@@ -43,3 +45,7 @@ solution = ss.SaputoSolution(solve1, solve4)
 print(solution)
 traitement = tr.Traitement(fichier=fichier, solution=solution)
 print(traitement.affichageSolution())
+
+print("test pour solveur poids")
+solveur_eff = se.SolveurEfficacite()
+solution = solveur_eff.solve(problem)

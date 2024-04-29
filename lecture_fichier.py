@@ -38,8 +38,9 @@ class LectureFichier():
             limite = df_produits["Limite de séchage"][index]
             quantite = df_produits["Quantité"][index]
             gain = df_produits["Gain"][index]
+            poids = df_produits["Poids"][index]
 
-            produit_ajout = produit.Produit(lot, type, ligne, limite, quantite, gain)
+            produit_ajout = produit.Produit(lot, type, ligne, limite, quantite, gain, poids)
             self.produits.append(produit_ajout)
 
     def setOperateurs(self):

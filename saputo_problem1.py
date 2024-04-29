@@ -11,6 +11,7 @@ class SaputoProbleme1(probleme.Probleme):
         self.fichier = copy.deepcopy(fichier)
         self.liens = []
         self.gains = []
+        self.poids = []
         self.quantites = []
         self.cadences = []
         self.employe_ligne = []
@@ -24,6 +25,7 @@ class SaputoProbleme1(probleme.Probleme):
         self.setCadences()
         self.setEmployes()
         self.setOperateurs()
+        self.setPoids()
 
     def setLiens(self):
         self.liens = []
@@ -64,6 +66,11 @@ class SaputoProbleme1(probleme.Probleme):
         self.quantites = []
         for i in range(len(self.fichier.produits)):
             self.quantites.append(self.fichier.produits[i].quantite)
+
+    def setPoids(self):
+        self.poids = []
+        for i in range(len(self.fichier.produits)):
+           self.poids.append(self.fichier.produits[i].poids)
         
         
 
