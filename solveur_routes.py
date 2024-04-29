@@ -29,7 +29,6 @@ class SolveurRoute(solveur.Solveur):
         
         #Générer les datas pour les liens:
         df_liens = pd.DataFrame(probleme.liens)
-        print(df_liens)
         ampl.get_parameter("lien").set_values(df_liens)
 
         #Générer les datas pour le nettoyage:
@@ -52,7 +51,6 @@ class SolveurRoute(solveur.Solveur):
         ampl.solve()
 
         solution_ampl = ampl.getVariable('x').get_values().to_list()
-        print(solution_ampl)
         valeurs_utilise = [quad for quad in solution_ampl if quad[3] != 0]
         valeurs_simplifie = [(x, y, z) for x, y, z, k in valeurs_utilise]
         return list(valeurs_simplifie)

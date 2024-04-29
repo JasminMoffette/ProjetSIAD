@@ -37,7 +37,6 @@ print("Test pour solveur route:")
 solveur_route = sr.SolveurRoute()
 solve4= solveur_route.solve(probleme2)
 print(solve4)
-print(solve1)
 
 print("Test de la solution")
 solution = ss.SaputoSolution(solve1, solve4)

@@ -39,7 +39,8 @@ subject to c4{k in L}:
 sum{i in F,j in F} (temps_nettoyage[i,j] + besoin[i]) * x[i,j,k] <= temps_max; 
 
 #Figer la ligne
-subject to choix_ligne{i in F, j in F, k in L : k != lien[i]}: x[i,j,k] = 0; 
+subject to choix_ligne{i in F, j in F, k in L : k != lien[j]}: x[i,j,k] = 0;
+subject to choix_ligne2{i in F, j in F, k in L : k != lien[i]}: x[i,j,k] = 0;  
 
 #MTZ
 subject to soustour{i in F, j in F, k in L: i <> j}: u[i,k] - u[j,k] + card(F) * x[i,j,k] <= card(F) - 1;
