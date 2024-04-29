@@ -15,9 +15,8 @@ param temps_journee;
 
 var y{l in L} binary;
 var x{f in F, l in L};
-var debut_production{F, L} binary;
 
-# Maximiser la quantité produite
+# Minimiser les pertes
 minimize objectif_quantite: sum{f in F} quantite[f]- sum{f in F, l in L}quantite[f]*x[f,l]+
 	sum{f in F, l in L}delai_peremption[f]*x[f,l];
 
