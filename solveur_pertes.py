@@ -62,7 +62,7 @@ class SolveurSechage(solveur.Solveur):
         
   
         #Résoudre
-        ampl.solve(verbose=True)
+        ampl.solve(verbose=False)
 
         solution_ampl = ampl.getVariable('x').get_values().to_list()
         ampl.close()

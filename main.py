@@ -42,7 +42,7 @@ elif texte_solveur.lower() == "sechage":
     solution1 = solveur.solve(probleme1)
     print(" \033[92mdone\033[0m")
 else: 
-    print("erreur, veuillez relancer.")
+    print("\033[91merreur, veuillez relancer.\033[0m")
     sys.exit()
 
 print("====================================================")
