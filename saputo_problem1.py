@@ -12,6 +12,7 @@ class SaputoProbleme1(probleme.Probleme):
         self.liens = []
         self.gains = []
         self.poids = []
+        self.sechages = []
         self.quantites = []
         self.cadences = []
         self.employe_ligne = []
@@ -26,6 +27,7 @@ class SaputoProbleme1(probleme.Probleme):
         self.setEmployes()
         self.setOperateurs()
         self.setPoids()
+        self.setSechage()
 
     def setLiens(self):
         self.liens = []
@@ -71,6 +73,11 @@ class SaputoProbleme1(probleme.Probleme):
         self.poids = []
         for i in range(len(self.fichier.produits)):
            self.poids.append(self.fichier.produits[i].poids)
+
+    def setSechage(self):
+        self.sechages = []
+        for i in range(len(self.fichier.produits)):
+           self.sechages.append(self.fichier.produits[i].priorite)
         
         
 

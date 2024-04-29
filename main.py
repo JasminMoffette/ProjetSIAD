@@ -3,6 +3,8 @@ import solveur_money as sm
 import lecture_fichier as lf
 import saputo_problem2 as sp2
 import solveur_routes as sr
+import solveur_efficacite as se
+import solveur_pertes as solp
 import saputo_solution as ss
 import traitement as tr
 import sys
@@ -27,11 +29,19 @@ if texte_solveur.lower() == "gain":
     print("\033[1mSélection des lots et quantités...\033[0m", end="")
     solution1 = solveur.solve(probleme1)
     print(" \033[92mdone\033[0m")
-elif texte_solveur.lower == "poids":
-    pass
-elif texte_solveur.lower == "sechage":
-    pass
-else:
+elif texte_solveur.lower() == 'poids':
+    print(f"\033[1msolveur sélectionné:\033[0m {texte_solveur}")
+    solveur = se.SolveurEfficacite()
+    print("\033[1mSélection des lots et quantités...\033[0m", end="")
+    solution1 = solveur.solve(probleme1)
+    print(" \033[92mdone\033[0m")
+elif texte_solveur.lower() == "sechage":
+    print(f"\033[1msolveur sélectionné:\033[0m {texte_solveur}")
+    solveur = solp.SolveurSechage()
+    print("\033[1mSélection des lots et quantités...\033[0m", end="")
+    solution1 = solveur.solve(probleme1)
+    print(" \033[92mdone\033[0m")
+else: 
     print("erreur, veuillez relancer.")
     sys.exit()
 

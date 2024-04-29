@@ -25,9 +25,8 @@ class SolveurEfficacite(solveur.Solveur):
         instance = mzn.Instance(coin, mini_model)
 
         #Ajouter les données provenant du problème(prob)
-        instance["F"] = list(range(1,len(probleme.fichier.produits)+1))
-        print(list(range(1,len(probleme.fichier.produits))))
-        instance["L"] = list(range(1,len(probleme.cadences)+1))
+        instance["F"] = list(range(0,len(probleme.fichier.produits)))
+        instance["L"] = list(range(0,len(probleme.cadences)))
 
         instance["lien"] = probleme.liens
         instance["poids"] = probleme.poids
@@ -42,11 +41,11 @@ class SolveurEfficacite(solveur.Solveur):
 
         resolution = instance.solve()
         solution = resolution["x"]
-        print(solution)
         valeurs_utilise= []
-        for i in range(0,len(probleme.cadences)):
-            for j in range(0,len(probleme.fichier.produits)):
+        for i in range(0,len(probleme.fichier.produits)):
+            for j in range(0,len(probleme.cadences)):
                 if solution[i][j] != -0.0:
-                    valeurs_utilise.append((j,i,solution[i][j]))
+                    valeurs_utilise.append((i,j,round(solution[i][j], 2)))
+                    break
         
-        print(valeurs_utilise)
+        return valeurs_utilise

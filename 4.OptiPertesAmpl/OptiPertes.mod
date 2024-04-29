@@ -12,14 +12,15 @@ param nb_operateur{l in L};
 param employe;
 param operateur;
 param temps_journee;
+param maxprod;
 
 var y{l in L} binary;
 var x{f in F, l in L};
 
 # Minimiser les pertes
-minimize objectif_quantite: sum{f in F} quantite[f]- sum{f in F, l in L}quantite[f]*x[f,l]+
-	sum{f in F, l in L}delai_peremption[f]*x[f,l];
-
+#minimize objectif_quantite: sum{f in F} quantite[f]- sum{f in F, l in L}quantite[f]*x[f,l]+
+	#sum{f in F, l in L}delai_peremption[f]*x[f,l];
+minimize objectif_quantite: sum{f in F} quantite[f]- sum{f in F, l in L}(quantite[f]*x[f,l] /delai_peremption[f]);
 
 #Permettre des fractions de lot, assure le respect des quantites
 subject to c1{f in F, l in L}: x[f,l] >= 0;

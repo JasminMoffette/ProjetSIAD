@@ -21,6 +21,7 @@ print(problem.nb_employes)
 print(problem.nb_operateurs)
 print(problem.journee)
 print(problem.poids)
+print(problem.sechages)
 
 
 print("Tests pour solve en argent:")
@@ -48,4 +49,8 @@ print(traitement.affichageSolution())
 
 print("test pour solveur poids")
 solveur_eff = se.SolveurEfficacite()
-solution = solveur_eff.solve(problem)
+solve2 = solveur_eff.solve(problem)
+print(solve2)
+probleme22 = sp2.SaputoProblem2(solve2,problem,fichier)
+solve42 = solveur_route.solve(probleme22)
+print(solve42)

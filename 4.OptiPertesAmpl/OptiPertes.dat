@@ -6,7 +6,7 @@ set L := 0, 1, 2, 3, 4;
 param lien:= 0 1 1 1 2 1;
 
 #Délai de péremption
-param delai_peremption := 0 0 1 1 2 2;
+param delai_peremption := 0 9 1 6 2 1;
 #nb de fromages
 param quantite := 0 800 1 500 2 200;
 
