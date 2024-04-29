@@ -48,7 +48,7 @@ class SolveurRoute(solveur.Solveur):
         
   
         #Résoudre
-        ampl.solve()
+        ampl.solve(verbose=False)
 
         solution_ampl = ampl.getVariable('x').get_values().to_list()
         valeurs_utilise = [quad for quad in solution_ampl if quad[3] != 0]

@@ -4,10 +4,9 @@ import lecture_fichier as lf
 
 class Traitement():
     
-    def __init__(self, fichier=lf.LectureFichier, solution=ss.SaputoSolution, solveur1=str):
+    def __init__(self, fichier=lf.LectureFichier, solution=ss.SaputoSolution):
         self.fichier = fichier
         self.solution = solution
-        self.solveur1 = solveur1
 
     def affichageSolution(self):
         liste_emballage= []
@@ -27,7 +26,6 @@ class Traitement():
                     ligne = key   
             liste_emballage.append((lot, quantite, ligne))
 
-        print(liste_emballage)
 
         #Récupérer les valeurs de la deuxième solution
 
@@ -62,9 +60,10 @@ class Traitement():
         for index, ligne in enumerate(liste_route):
             for element in ligne:
                 liste_route_lot[index].append(liste_emballage[element][0])
+
+
+        return liste_emballage, liste_route_lot
+
                 
-                
-        print(liste_route)
-        print(liste_route_lot)
 
         
