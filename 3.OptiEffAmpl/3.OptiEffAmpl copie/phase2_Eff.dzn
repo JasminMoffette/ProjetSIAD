@@ -1,0 +1,22 @@
+% Définition des 3 lots
+F = { 1, 2, 3 };
+% Définition des 5 machines : P, M, GF, Multi, C
+L = { 1, 2, 3, 4, 5 };
+
+%Les liens machine (l) selon le lot (f) (donc lot 0 avec machine 1, lot 1 avec machine 2, lot 2 avec machine 1)
+lien = [2, 3, 2];
+% Poids par fromage selon le lot (f)
+poids = [400, 2000, 200];
+% Nombre de fromages selon le lot (f)
+quantite = [800, 500, 200];
+
+% Cadence selon la machine (l)
+cadence = [8, 12, 2, 6, 5];
+% Nombre d'employés selon la machine (l)
+nb_employe = [2, 3, 1, 4, 2];
+% Nombre d'opérateurs selon la machine (l)
+nb_operateur = [1, 1, 2, 2, 1];
+
+employe = 6;
+operateur = 4;
+temps_journee = 100;
