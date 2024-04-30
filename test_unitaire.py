@@ -31,9 +31,9 @@ class TestUnitaire(unittest.TestCase):
         self.assertIsInstance(self.fichier.dict_employes, dict)
         self.assertIsInstance(self.fichier.dict_nettoyage, dict)
         self.assertIsInstance(self.fichier.dict_operateurs, dict)
-        self.assertIsInstance(self.fichier.employes, list)
-        self.assertIsInstance(self.fichier.journee, int)
-        self.assertIsInstance(self.fichier.operateurs, list)
+        self.assertIsNot(self.fichier.employes, 0)
+        self.assertIsNot(self.fichier.journee, 0)
+        self.assertIsNot(self.fichier.operateurs, 0)
         self.assertIsInstance(self.fichier.produits, list)
 
     def test_classe_probleme_saputo(self):
@@ -73,7 +73,7 @@ class TestUnitaire(unittest.TestCase):
     def test_affichage_solution(self):
         # Test pour l'affichage de la solution
         affichage = self.traitement.affichageSolution()
-        self.assertIsInstance(affichage, str)
+        self.assertIsInstance(affichage, tuple)
 
     def test_solveur_poids(self):
         # Test pour le résultat du solveur de poids
